@@ -11,8 +11,8 @@ For this lab we are going to create a Mongoose db and Express server that has a 
 
 
 ## Instructions 
-- We want to see at least 4 related models, you are free to change this up and make any adjustments that you'd like, but try to work with 4 to challenge yourself!
-- Cuisine type, recipes, ingredients, and directions.
+- We want to see at least 3 related models, you are free to change this up and make any adjustments that you'd like
+- Your models will be - Cuisine type, recipes and directions. Types will be a parent of Recpies, which will be a parent of Directions
 - Take your time to plan out the data and relations before you begin setting up your code. Having everything planned out before beginning will be crucial as you move into the more advanced parts of the lesson
 - We want to see you using as many data types as you can. How do we differentiate Oz vs Tsp vs Tsps vs Gms for our ingredients. How should be mark Oven temperature? How about things like Vegan, Gluten Free, Kosher, Halal... Challenge yourself to make this a strong db where you try something you have not done before
 
