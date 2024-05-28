@@ -7,7 +7,7 @@
 
 We know how labor intensive and draining Back End Coding can be, especially as the day goes on and our blood sugar starts to drop. Luckily, we can use our coding skills to help keep our energy up by creating a database of recipes for us to use!
 
-For this lab we are going to create a Mongoose db and Express server that has a number of models and routes for each. We'll be adding in some recipes. Don't worry about making anything too complex in this, we're more concerned with you understanding the set up of a db and server, and thinking about embedding and referencing documents than taking the time to write out something that will win you a Michelin star
+For this lab we are going to create a Mongoose db and Express server that has a number of models and routes for each. And then adding in some recipes to populate our database. Don't worry about making anything too complex in this, we're more concerned with you understanding the set up of a db and server, and thinking about embedding and referencing documents than taking the time to write out something that will win you a Michelin star
 
 
 ## Instructions 
