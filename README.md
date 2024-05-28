@@ -20,7 +20,7 @@ For this lab we are going to create a Mongoose db and Express server that has a 
 ## Requirements 
 
 - Index and Show routes for each of your models
-- Get-ing your data in a way besides your 
+- Get-ing your data in a way besides just ID 
 - Create, Update, and Delete functionality for models as well
 - All functionality encapsulated in a Controllers folder
 -  At least 1 relation between collections related to each other, with at least 1 part embedded into each other (maybe you want to relate Ingredients to Recipes, while embedding Instructions within Recipes, or maybe go the other way around)
