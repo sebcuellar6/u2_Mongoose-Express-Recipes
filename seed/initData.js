@@ -1,51 +1,52 @@
 const db = require('../db')
 const { Type, Recipe, Ingredient } = require('../models')
 
-// db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const resetCollections = async () => {
     try {
         await Type.deleteMany({});
         await Recipe.deleteMany({});
         await Ingredient.deleteMany({});
-        console.log('All collections reset');
+        console.log('All collection reset');
     } catch (error) {
         console.error('Error resetting collections:', error);
     }
 }
 
 const main = async () => {
-    await resetCollections();
 
-    const type1 = new Type({
+resetCollections()
+
+    const type1 = await new Type({
         ethnicity: 'Italian',
         famousChef: 'https://www.apple.com',
         haveTried: true
-    });
-    await type1.save();
-
-    const type2 = new Type({
+      })
+      type1.save()
+    
+      const type2 = await new Type({
         ethnicity: 'French',
         famousChef: 'Julia Child',
         haveTried: true
-    });
-    await type2.save();
-
-    const type3 = new Type({
+      })
+      type2.save()
+    
+      const type3 = await new Type({
         ethnicity: 'Mexican',
         famousChef: 'Gabriel Iglesias',
         haveTried: true
-    });
-    await type3.save();
+      })
+      type3.save()
 
-    const recipeArray = [
+      const recipeArray = [
         {
-            type_id: type1._id,
-            name: 'Lasagna',
-            prepTime: 30,
-            totalTime: 60,
-            calories: 200,
-            difficulty: 'easy'
+          type_id: type1._id,
+          name: 'Lasagna',
+          prepTime: 30,
+          totalTime: 60,
+          calories: 200,
+          difficulty: 'easy'
         },
         {
             type_id: type1._id,
@@ -87,7 +88,9 @@ const main = async () => {
             calories: 350,
             difficulty: 'hard'
         }
-    ];
+      ]
+
+    // recipeArray.save()
 
     const recipes = await Recipe.insertMany(recipeArray);
     console.log('Created recipes!');
@@ -107,13 +110,14 @@ const main = async () => {
         }
     ];
 
-    await Ingredient.insertMany(ingredientArray);
-    console.log('Created ingredients!');
+      //recipeArray.save()
+      await Ingredient.insertMany(ingredientArray)
+      console.log('Created ingredients!')
 }
 
 const run = async () => {
-    await main();
-    db.close();
+    await main()
+    db.close()
 }
 
-run();
+run()
